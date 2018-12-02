@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
-
 input_file = "input.txt"
-total = 0
+checksum = 0 # set 
 
 with open(input_file, "r+") as f:
 	input_string = f.readlines()
@@ -10,8 +9,8 @@ with open(input_file, "r+") as f:
 # remove whitespaces/newlines
 input_string = [x.strip().replace("\n","") for x in input_string] 
 
-for num in input_string:
-	total += int(num)
+for num in input_string: # Sum checksum
+	checksum += int(num)
 
-print("Total:\t" + str(total))
+print 'Checksum:\t %s' % (checksum)
 

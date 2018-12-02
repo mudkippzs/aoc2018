@@ -9,9 +9,12 @@ with open(input_file, "r+") as f:
 d_count = 0 # count occurance of doubles
 t_count = 0 # count occurance of triples
 
+# remove whitespaces/newlines
+input_data = [x.strip().replace("\n","") for x in input_data] 
+
 for string in input_data: # iterate through input strings	
 	d = collections.defaultdict(int) # build alphabet dict
-	for c in string.replace("\n",""): # iterate letters in string
+	for c in string: # iterate letters in string
 		d[c] += 1 # count the hits
 	
 	for c in sorted(d, key=d.get, reverse=True): # checking for doubles
